@@ -13,15 +13,17 @@ body {
 
 
 /* ====================== header ====================== */
-header {
-    width: 100%;
-    background-color: #fff;
-    padding: 20px;
+
+
+.nemo {
+    width: auto;
 }
 
 nav {
-    margin: auto;
-    max-width: 1200px;
+    background-color: #fff;
+}
+
+nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,25 +46,6 @@ nav li {
 }
 
 /* ====================== container ====================== */
-
-.container {
-    margin: auto;
-    max-width: 1200px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* left 放LOGO */
-aside {
-
-    /* background-color: aqua; */
-}
-
-aside img {
-    max-width: 400px;
-}
 
 /* right */
 main {
@@ -124,20 +107,3 @@ footer a {
 
 
 /* ====================== RWD ====================== */
-@media (max-width: 1199px) {
-    .container {
-        flex-wrap: wrap;
-        max-width: 1140px;
-    }
-}
-
-@media (max-width: 767px) {
-    .menu {
-        display: none;
-    }
-
-    .burgar {
-        display: block;
-    }
-
-}
