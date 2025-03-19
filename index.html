@@ -16,64 +16,86 @@
     <nav>
         <div class="container px-5">
             <div class="logo">
-                Nemophila
+                Misty Moon
             </div>
-
-            <ul class="nav menu">
-                <li>About Me</li>
-                <li>Web</li>
-                <li>Art</li>
-                <li>Contact</li>
-                <li>Pixiv</li>
-            </ul>
-            <a href="#" class="burgar">
-                <i class="fas fa-bars"></i>
-            </a>
-
         </div>
     </nav>
-
 
     <!-- ====================== container ====================== -->
     <main>
         <div class="container py-5">
             <div class="row">
                 <!-- left - 圖片  -->
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <img class="img-fluid" src="./images/LOGO.png" alt="">
                 </div>
 
                 <!-- right - 文字 -->
-                <div class="col-lg-6">
-                    <h2 class="portfolios-title">Web Portfolios</h2>
+                <div class="col-lg-8">
+                    <h2 class="portfolios-title">網站作品集</h2>
                     <hr>
-                    <ul>
-                        <li><a href="https://wda.mackliu.com/s1130211/calendar/">Timeless Calendar — 萬年曆</a></li>
-                        <li><a href="https://wda.mackliu.com/s1130211/order">點餐系統版面設計DAMO</a></li>
-                        <li><a href="https://lupusxlass1404.github.io/Exercise-text-RPG/">RPG冒險DAMO — 文字遊戲</a></li>
-                        <li><a href="#">unknown</a></li>
-                        <li><a href="#">unknown</a></li>
-                        <li><a href="#">unknown</a></li>
-                        <li><a href="#">unknown</a></li>
-                        <li><a href="#">unknown</a></li>
-                        <li><a href="./file">檔案管理</a></li>
-                    </ul>
+                    <div id="portfolios" class="portfolios"></div>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- ====================== footer ====================== -->
-    <!-- <footer>
+    <footer>
         <p>
             <a href="https://github.com/LupusXLass1404/calendar" target="_blank">
                 <i class="fa-brands fa-github"></i> github
             </a>
-            <i class="fa-regular fa-copyright"></i> 2024 Nemophila. All Rights Reserved.
+            <i class="fa-regular fa-copyright"></i> 2025 Misty Moon. All Rights Reserved.
         </p>
-    </footer> -->
+    </footer>
 
+    <script>
+        const portfolios = [
+            {
+                title: '日式燒肉 - 炭火燒烤，醬香四溢',
+                text: '前端切版，使用bootstrap',
+                link: 'https://lupusxlass1404.github.io/113_WebFrontend_Final/',
+                img: 1,
+            },
+            {
+                title: 'Timeless Calendar — 萬年曆',
+                text: 'PHP日歷系統',
+                link: 'https://wda.mackliu.com/s1130211/calendar/',
+                img: 2,
+            },
+            {
+                title: 'RPG文字冒險遊戲',
+                text: 'Javascript開發',
+                link: 'https://lupusxlass1404.github.io/Exercise-text-RPG/',
+                img: 3,
+            },
+            {
+                title: '吃球小遊戲',
+                text: 'canvas標籤試做',
+                link: 'https://lupusxlass1404.github.io/small_game/',
+                img: 4,
+            },
+        ];
 
+        let tmp = '';
+        portfolios.forEach(e => {
+            tmp += `
+             <div class="card">
+                <a href="${e.link}"><img class="card-img-top" src="./images/portfolios/${e.img}.jpg" alt="Card image"
+                    style="width:100%"></a>
+                <div class="card-body">
+                    <h2 class="card-title">${e.title}</h2>
+                    <p class="card-text">${e.text}</p><br>
+                    <p><a href="${e.link}" class="btn btn-primary">立即瀏覽</a></p>
+                    
+                </div>
+            </div>
+            `;
+        });
+        document.getElementById('portfolios').innerHTML = tmp;
+
+    </script>
 
 
 </body>
