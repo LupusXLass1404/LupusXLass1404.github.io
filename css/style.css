@@ -4,6 +4,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    color: #333;
 }
 
 body {
@@ -11,10 +12,12 @@ body {
     font-family: "Noto Sans TC", serif;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
 /* ====================== header ====================== */
-
-
 .nemo {
     width: auto;
 }
@@ -34,7 +37,7 @@ nav .container {
     font-size: 32px;
     font-weight: bolder;
     font-family: "Dancing Script", cursive;
-    margin: 16px;
+    margin: 8px;
 }
 
 nav ul {
@@ -58,17 +61,38 @@ main h2 {
     font-size: 24px;
 }
 
+#log,
+#web {
+    transition: width 0.5s ease-in-out;
+    position: relative;
+}
+
+.web-container.expand {
+    width: 100%;
+}
+
 .portfolios {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.portfolios .card {
-    width: 48%;
+.portfolios_card {
+    width: 47%;
     margin: 8px;
 }
 
+.portfolios_card.resize {
+    width: 30%;
+}
+
+#portfolios_more {
+    float: right;
+}
+
+.portfolios_card .card-text {
+    color: #444;
+}
 
 /* ====================== footer ====================== */
 footer {
@@ -78,7 +102,6 @@ footer {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     text-align: center;
-    margin-top: 40px;
     position: fixed;
     bottom: 0;
 }
@@ -86,6 +109,10 @@ footer {
 footer a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+}
+
+footer i {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 

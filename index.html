@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My web</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/a3ca2244ae.js" crossorigin="anonymous"></script>
 </head>
@@ -15,46 +14,83 @@
     <!-- ====================== nav ====================== -->
     <nav>
         <div class="container px-5">
-            <div class="logo">
-                Misty Moon
-            </div>
+            <a href="./index.html">
+                <div class="logo">
+                    Misty Moon
+                </div>
+            </a>
         </div>
     </nav>
 
     <!-- ====================== container ====================== -->
     <main>
-        <div class="container py-5">
+        <div class="container py-4">
             <div class="row">
                 <!-- left - 圖片  -->
-                <div class="col-lg-4">
-                    <img class="img-fluid" src="./images/LOGO.png" alt="">
+                <div id="log" class="col-lg-5">
+                    <img class="img-fluid" src="./images/LOGO.png" alt="Nemophila" title="Nemophila">
                 </div>
 
+
                 <!-- right - 文字 -->
-                <div class="col-lg-8">
-                    <h2 class="portfolios-title">網站作品集</h2>
+                <div id="web" class="col-lg-7">
+                    <h2 class="portfolios_title">
+                        網頁作品集
+                        <a id="portfolios_more" class="btn btn-primary text-white">看更多</a>
+                    </h2>
                     <hr>
                     <div id="portfolios" class="portfolios"></div>
                 </div>
             </div>
         </div>
     </main>
-
+    <br><br>
     <!-- ====================== footer ====================== -->
     <footer>
-        <p>
-            <a href="https://github.com/LupusXLass1404/calendar" target="_blank">
-                <i class="fa-brands fa-github"></i> github
-            </a>
-            <i class="fa-regular fa-copyright"></i> 2025 Misty Moon. All Rights Reserved.
-        </p>
+        <a href="https://github.com/LupusXLass1404/calendar" target="_blank">
+            <i class="fa-brands fa-github"></i> github
+        </a>
+        <i class="fa-regular fa-copyright"></i> 2025 Misty Moon. All Rights Reserved.
     </footer>
 
     <script>
+        // ====================== function ======================
+        function init() {
+            generate_portfolios('init');
+        }
+
+        function generate_portfolios(type) {
+
+            let tmp = '';
+            portfolios.forEach((e, idx) => {
+                if (type == 'init' && idx >= 4) return; //初始化時，只輸出4個連結
+
+                tmp += `
+                    <div class="card portfolios_card">
+                        <a href="${e.link}" target="_blank">
+                            <img class="card-img-top" src="./images/portfolios/${e.img}.jpg" alt="${e.title}" title="${e.title}">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">${e.title}</h5>
+                            <p class="card-text">${e.text}</p>
+                            <a href="${e.link}" class="btn btn-info text-white" target="_blank">立即瀏覽</a>
+                        </div>
+                    </div>
+                    `;
+            });
+
+            portfoliosId.innerHTML = tmp;
+        }
+
+        // ====================== declaration ======================
+        const logId = document.getElementById('log');
+        const webId = document.getElementById('web');
+        const portfoliosId = document.getElementById('portfolios');
+        const portfoliosMoreId = document.getElementById('portfolios_more');
         const portfolios = [
             {
                 title: '日式燒肉 - 炭火燒烤，醬香四溢',
-                text: '前端切版，使用bootstrap',
+                text: '前端設計，bootstrap切版',
                 link: 'https://lupusxlass1404.github.io/113_WebFrontend_Final/',
                 img: 1,
             },
@@ -71,29 +107,63 @@
                 img: 3,
             },
             {
+                title: '沫風茶舍 - 線上點餐',
+                text: '切版 + Javascript練習',
+                link: 'https://lupusxlass1404.github.io/113_Web_practice/HTML/menu/',
+                img: 6,
+            },
+            {
                 title: '吃球小遊戲',
                 text: 'canvas標籤試做',
                 link: 'https://lupusxlass1404.github.io/small_game/',
                 img: 4,
             },
+            {
+                title: '食物大樓',
+                text: 'html練習',
+                link: 'https://lupusxlass1404.github.io/113_Web_practice/HTML/food/',
+                img: 5,
+            },
+            {
+                title: '點擊會變色的方塊',
+                text: 'flex-box練習',
+                link: 'https://lupusxlass1404.github.io/113_Web_practice/HTML/flex-box.html',
+                img: 7,
+            },
+            {
+                title: '白天與黑夜的碼頭之旅',
+                text: 'position練習',
+                link: 'https://lupusxlass1404.github.io/113_Web_practice/HTML/position.html',
+                img: 8,
+            },
+            {
+                title: '登入畫面設計',
+                text: '設計 + 切版練習',
+                link: 'https://lupusxlass1404.github.io/113_Web_practice/HTML/login.html',
+                img: 9,
+            },
         ];
 
-        let tmp = '';
-        portfolios.forEach(e => {
-            tmp += `
-             <div class="card">
-                <a href="${e.link}"><img class="card-img-top" src="./images/portfolios/${e.img}.jpg" alt="Card image"
-                    style="width:100%"></a>
-                <div class="card-body">
-                    <h2 class="card-title">${e.title}</h2>
-                    <p class="card-text">${e.text}</p><br>
-                    <p><a href="${e.link}" class="btn btn-primary">立即瀏覽</a></p>
-                    
-                </div>
-            </div>
-            `;
-        });
-        document.getElementById('portfolios').innerHTML = tmp;
+
+        // ====================== binding ======================
+        document.addEventListener('DOMContentLoaded', init);
+
+        portfoliosMoreId.addEventListener('click', function () {
+            webId.classList.replace('col-lg-7', 'col-lg-12');
+
+            logId.style.width = '0px';
+            logId.style.right = '200px';
+
+            generate_portfolios();
+
+            const portfoliosCardClass = document.querySelectorAll('.portfolios_card');
+            portfoliosCardClass.forEach(card => {
+                card.classList.add('resize');
+            })
+
+            portfoliosMoreId.style.display = 'none';
+        })
+
 
     </script>
 
