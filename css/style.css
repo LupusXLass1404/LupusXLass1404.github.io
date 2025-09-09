@@ -72,14 +72,13 @@ nav li {
 .card__link,
 .card__link i {
     color: #12296a;
+    transition: all 0.5s ease;
 }
 
 .card__link {
     text-align: center;
     border: 0;
     background-color: #eff9ff;
-    transition: all 0.5s ease;
-
 }
 
 .card__link:hover,
@@ -105,9 +104,7 @@ footer i {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: all 0.2s ease;
-
 }
-
 
 footer a:hover i,
 footer a:hover {
