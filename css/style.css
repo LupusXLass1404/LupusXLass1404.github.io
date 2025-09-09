@@ -19,6 +19,11 @@ a {
     text-decoration: none;
 }
 
+/* 覆蓋bs5樣式 */
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0, 9, 58, 0.15) !important;
+}
+
 /* ====================== header ====================== */
 nav {
     background-color: #9cdcf4;

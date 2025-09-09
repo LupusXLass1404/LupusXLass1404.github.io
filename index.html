@@ -36,7 +36,7 @@
             <div id="web" class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4 " v-for="(p, idx) in portfolios" :key="idx">
-                        <div class="card portfolios__card shadow">
+                        <div class="card h-100 shadow portfolios__card">
                             <a :href="p.link" target="_blank" class="card__imgLink shadow-sm">
                                 <img class="card-img-top card__img" :src="'./images/portfolios/' + p.img + '.jpg'"
                                     :alt="p.title" :title="p.title">
