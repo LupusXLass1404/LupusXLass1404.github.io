@@ -1,29 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Noto+Sans+TC:wght@100..900&display=swap&family=Poly:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900');
+
+:root {
+    --dark: #353C4F
+}
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: #333;
+    color: #353C4F;
 }
 
 body {
-    background-color: rgb(226, 240, 255);
-    font-family: "Noto Sans TC", serif;
+    font-family: "Poly", Arial, "Noto Sans TC", serif;
+    background: linear-gradient(to bottom, rgb(226, 240, 255) 0%, #ffffff 100%);
+
 }
 
 a {
     text-decoration: none;
-    color: black;
 }
 
 /* ====================== header ====================== */
-.nemo {
-    width: auto;
-}
-
 nav {
-    background-color: #fff;
+    background-color: #9cdcf4;
 }
 
 nav .container {
@@ -38,6 +39,7 @@ nav .container {
     font-weight: bolder;
     font-family: "Dancing Script", cursive;
     margin: 8px;
+
 }
 
 nav ul {
@@ -50,55 +52,51 @@ nav li {
 }
 
 /* ====================== container ====================== */
+.portfolios__card {
+    border: 0;
+    color: #353C4F;
+    overflow: hidden;
 
-/* right */
-main {
-    width: 100%;
-    /* background-color: green; */
 }
 
-main h2 {
-    font-size: 24px;
+.card__imgLink {
+    overflow: hidden;
 }
 
-#log,
-#web {
-    transition: width 0.5s ease-in-out;
-    position: relative;
+.card__img {
+    transition: all 0.5s ease;
 }
 
-.web-container.expand {
-    width: 100%;
+.card__img:hover {
+    transform: scale(1.1);
+    filter: brightness(60%);
 }
 
-.portfolios {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* card */
+.card__link,
+.card__link i {
+    color: #12296a;
 }
 
-.portfolios_card {
-    width: 47%;
-    margin: 8px;
+.card__link {
+    text-align: center;
+    border: 0;
+    background-color: #eff9ff;
+    transition: all 0.5s ease;
+
 }
 
-.portfolios_card.resize {
-    width: 30%;
-}
-
-#portfolios_more {
-    float: right;
-}
-
-.portfolios_card .card-text {
-    color: #444;
+.card__link:hover,
+.card__link:hover i {
+    color: #ffffff;
+    background-color: #4777b6;
 }
 
 /* ====================== footer ====================== */
 footer {
     width: 100%;
     padding: 12px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 16, 35, 0.6);
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     text-align: center;
@@ -113,6 +111,11 @@ footer a {
 
 footer i {
     color: rgba(255, 255, 255, 0.8);
+}
+
+footer a:hover i,
+footer a:hover {
+    color: #a4b8d1;
 }
 
 
