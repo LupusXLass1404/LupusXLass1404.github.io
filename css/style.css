@@ -53,7 +53,6 @@ nav li {
     border: 0;
     color: #353C4F;
     overflow: hidden;
-
 }
 
 .card__imgLink {
@@ -101,14 +100,14 @@ footer {
     bottom: 0;
 }
 
-footer a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-}
-
+footer a,
 footer i {
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.2s ease;
+
 }
+
 
 footer a:hover i,
 footer a:hover {
